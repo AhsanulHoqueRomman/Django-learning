@@ -56,6 +56,9 @@
             padding: 1rem;
             margin-top: 2rem;
         }
+        table{
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +81,33 @@
         
         <section id="about">
             <h2>About Us</h2>
-            <p>Learn more about our company and mission.</p>
+
+            {% for i in clist %}                <!Using Django template for loop in html file.>
+            <p>{{forloop.revcounter0}} {{i}}</p>
+            {% endfor %}
+
+            <br/>
+
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                </tr>
+
+
+                {% for i in student_details%}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.Contact}}</td>
+
+                </tr>
+
+                {% endfor %}
+
+
+
+            </table>
+
         </section>
         
         <section id="services">
