@@ -35,3 +35,17 @@ cards.forEach(card => {
     card.style.transform = "translateY(50px)";
     card.style.transition = "0.5s";
 });
+
+// FADE-UP ANIMATION ON SCROLL
+const fadeElements = document.querySelectorAll(".fade-up");
+
+window.addEventListener("scroll", () => {
+    fadeElements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 100) {
+            el.classList.add("show");
+        }
+    });
+});

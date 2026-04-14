@@ -122,4 +122,56 @@ footer {
     height: 100%;
     background: rgba(0,0,0,0.4);
 }
+
+/* PARALLAX BACKGROUND */
+.parallax {
+    height: 450px;
+    background-image: url("/static/img/about.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* GRADIENT OVERLAY */
+.banner-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(30,58,138,0.6)
+    );
+}
+
+/* CONTENT */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* ANIMATION */
+.fade-up {
+    opacity: 1;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* DELAY */
+.delay {
+    transition-delay: 0.3s;
+}
+
+.contact-banner {
+    background-image:url("/static/img/contact.jpg");
+}
 /*# sourceMappingURL=style.css.map */
