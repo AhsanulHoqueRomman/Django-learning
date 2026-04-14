@@ -1,145 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>            <!Passing data from django views.py file !There's a dictionary key named title in data.>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background: black;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            background: #0056b3;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        section {
-            margin: 2rem 0;
-        }
-        h1{
-            color: white;
-            margin: 1rem 0;
-            
-        }
-        
-        h2 {
-            color: #007bff;
-            margin: 1rem 0;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        table{
-            margin-top: 2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeService</title>
+<link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
-    <header>
-        <h1>{{heading}}</h1>            <!Passing data from django views.py file !There's a dictionary key named heading in data.>
-    </header>
-    
+
+<header class="header">
+    <h1>HomeService</h1>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
-    
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is your landing page. Welcome!</p>
-        </section>
-        
-        <section id="about">
-            <h2>About Us</h2>
+</header>
 
-            {% for i in clist %}                <!Using Django template for loop in html file.>
-            <p>{{forloop.revcounter0}} {{i}}</p>
-            {% endfor %}
+<section class="hero">
+    <h2>Book Trusted Home Services</h2>
+    <p>Cleaning, Repair, Installation & More</p>
 
-            <br/>
+    <div class="search-box">
+        <input type="text" placeholder="Search services...">
+        <button>Search</button>
+    </div>
+</section>
 
-            <table border="1" cellpadding="10">
-                <tr>
-                    <th>Name</th>
-                    <th>Contact</th>
-                </tr>
+<section class="categories">
+    <h2>Popular Categories</h2>
+    <div class="grid">
+        <div class="card">Cleaning</div>
+        <div class="card">Plumbing</div>
+        <div class="card">Electrical</div>
+        <div class="card">AC Repair</div>
+        <div class="card">Painting</div>
+        <div class="card">Appliance</div>
+    </div>
+</section>
 
+<section class="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+        <div><h3>1</h3><p>Choose Service</p></div>
+        <div><h3>2</h3><p>Book Time</p></div>
+        <div><h3>3</h3><p>Done</p></div>
+    </div>
+</section>
 
-                {% for i in student_details%}
-                <tr>
-                    <td>{{i.name}}</td>
-                    <td>{{i.Contact}}</td>
+<section class="featured">
+    <h2>Featured</h2>
+    <div class="grid">
+        <div class="card">Home Cleaning</div>
+        <div class="card">AC Repair</div>
+        <div class="card">Electric Work</div>
+    </div>
+</section>
 
-                </tr>
+<section class="testimonials">
+    <h2>Reviews</h2>
+    <div class="grid">
+        <div class="card">"Great service!"</div>
+        <div class="card">"Fast & reliable"</div>
+        <div class="card">"Highly recommended"</div>
+    </div>
+</section>
 
-                {% endfor %}
+<section class="cta">
+    <h2>Ready to Book?</h2>
+    <button>Get Started</button>
+</section>
 
-            </table>
+<footer>
+    <p>© 2026 HomeService</p>
+</footer>
 
-
-            <! if_else statement in Django template>
-
-            
-            {% if numbers|length > 0 %}
-
-                {% for n in numbers %}
-
-                    {% if n > 20 %}
-                    <div>{{n}}</div>
-                    {%  endif %}
-                {% endfor %}
-
-            {% else %}
-
-            {% endif %}
-                No Data Found.
-
-        </section>
-        
-        <section id="services">
-            <h2>Services</h2>
-            <p>We offer quality services to meet your needs.</p>
-
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch with us today.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
-    </footer>
+<script src="js/script.js"></script>
 </body>
 </html>

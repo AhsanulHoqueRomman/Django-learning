@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
     path('about-us/',views.aboutUS),
-    path('course/',views.course),
-    path('course/<courseid>',views.courseDetails),          #Dynamic URL/Route: 3 types: 1.int  2.str  3.slug and if don't know the type then dont have to mention type
+    path('contact/',views.contact),
+    # path('course/<courseid>',views.courseDetails),    #Dynamic URL/Route: 3 types: 1.int  2.str  3.slug and if don't know the type then dont have to mention type
+    path('services/',views.services),       
     
 ]

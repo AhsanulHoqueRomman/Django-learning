@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: #1e3a8a;
+  color: white;
+}
+.header nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  color: white;
+}
+
+.small-hero {
+  padding: 50px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f3f4f6;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cta {
+  text-align: center;
+  background: #1e3a8a;
+  color: white;
+}
+.cta button {
+  padding: 10px 20px;
+  background: white;
+  color: #1e3a8a;
+  border: none;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
