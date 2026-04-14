@@ -1,24 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - HomeService</title>
-<link rel="stylesheet" href="/static/css/style.css">
-</head>
-
-<body>
-
-<header class="header">
-    <h1>HomeService</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="#">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+{% include "header.html" %}
 
 <!-- HERO -->
 <section class="banner parallax">
@@ -88,9 +68,4 @@
     <button onclick="window.location.href='services.html'">Explore Services</button>
 </section>
 
-<footer>
-    <p>© 2026 HomeService</p>
-</footer>
-
-</body>
-</html>
+{% include "footer.html" %}

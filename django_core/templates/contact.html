@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - HomeService</title>
-<link rel="stylesheet" href="/static/css/style.css">
-</head>
-
-<body>
-
-<header class="header">
-    <h1>HomeService</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+{% include "header.html" %}
 
 <!-- HERO -->
 <section class="banner parallax contact-banner">
@@ -112,11 +93,4 @@
     <button onclick="window.location.href='services.html'">Book Now</button>
 </section>
 
-<footer>
-    <p>© 2026 HomeService</p>
-</footer>
-
-<script src="/static/js/script.js"></script>
-
-</body>
-</html>
+{% include "footer.html" %}
