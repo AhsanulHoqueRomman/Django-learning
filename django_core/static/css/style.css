@@ -174,4 +174,23 @@ footer {
 .contact-banner {
     background-image:url("/static/img/contact.jpg");
 }
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 0;
+    transition: 0.5s;
+}
+
+/* hover effect (very subtle) */
+.header nav a:hover {
+    opacity: 0.7;
+}
+
+/* active page */
+.header nav a.active {
+    border-bottom: 2px solid white;
+    font-weight: 500;
+}
 /*# sourceMappingURL=style.css.map */

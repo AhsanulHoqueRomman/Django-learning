@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomeService</title>
-<link rel="stylesheet" href="/static/css/style.css">
-</head>
-
-<body>
-
 <header class="header">
     <h1>HomeService</h1>
     <nav>
-        <a href="{% url 'home' %}">Home</a>     <! % url "name from urls.py"% is used for connecting urls.>. It is a django tag!
-        <a href="{% url 'services' %}">Services</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'contact' %}">Contact</a>
+        <!--request.path  is used for requesting the current path/url at website and then that path will be highlighted. -->
+        <!--- % url "name from urls.py"% is used for connecting urls. It is a django tag! -->
+        <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+
+        <a class="{% if request.path == '/services/' %}active{% endif %}" href="{% url 'services' %}">Services</a>
+
+        <a class="{% if request.path == '/about-us/' %}active{% endif %}" href="{% url 'about' %}">About</a>
+
+        <!-- {% url 'contact' as url %} is another django method to highlighting a link.
+        We just named a url/path in alias form or store it in a variable  and put it in the request.path= alias name -->
+        
+        {% url 'contact' as url %}
+        <a class="{% if request.path == url %}active{% endif %}" href="{{url}}">Contact</a>
+
     </nav>
+    
 </header>
