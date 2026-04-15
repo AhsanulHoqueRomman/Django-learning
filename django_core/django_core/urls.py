@@ -20,10 +20,10 @@ from django_core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
-    path('about-us/',views.aboutUS),
-    path('contact/',views.contact),
+    path('',views.home,name="home"),
+    path('about-us/',views.aboutUS,name="about"),           #using this name variable to use this in django url tag in html file.
+    path('contact/',views.contact,name="contact"),
     # path('course/<courseid>',views.courseDetails),    #Dynamic URL/Route: 3 types: 1.int  2.str  3.slug and if don't know the type then dont have to mention type
-    path('services/',views.services),       
+    path('services/',views.services,name="services"),       
     
 ]
