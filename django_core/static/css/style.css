@@ -193,4 +193,46 @@ footer {
     border-bottom: 2px solid white;
     font-weight: 500;
 }
+
+.form-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+    outline: none;
+    border-color: #1e3a8a;
+}
+
+.form-box button {
+    padding: 10px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    opacity: 0.9;
+}
 /*# sourceMappingURL=style.css.map */

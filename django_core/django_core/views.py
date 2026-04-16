@@ -25,3 +25,18 @@ def contact(request):
 
 def services(request):
     return render(request,"services.html")
+
+def calculations(request):
+    try:
+        finalans=0
+        #One method to get the data from the form in GET method
+        # n1= int(request.GET["name"])
+        # n2= int(request.GET["phone"])
+        # print(n1+n2)
+        #Another method is:
+        n1 = int(request.GET.get("name"))
+        n2 = int(request.GET.get("phone"))
+        finalans= n1+n2
+    except:
+        pass
+    return render(request,"calculations.html",{'output':finalans})

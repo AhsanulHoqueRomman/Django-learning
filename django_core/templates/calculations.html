@@ -1,0 +1,29 @@
+<!-- I am using this Calculations form to learn GET method-->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-section">
+    <h2>Calculations</h2>
+
+    <form method="get" class="form-box">
+        
+
+        <input type="text" name="name" placeholder="Number1" required>
+
+
+
+        <input type="text" name="phone" placeholder="Number1">
+
+
+
+        <button type="submit">Submit</button>
+        
+             Output
+        <input type="text" value= "{{ output }}" />
+    </form>
+
+</section>
+
+{% endblock %}
