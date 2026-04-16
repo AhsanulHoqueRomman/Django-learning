@@ -25,6 +25,7 @@ urlpatterns = [
     path('contact/',views.contact,name="contact"),
     # path('course/<courseid>',views.courseDetails),    #Dynamic URL/Route: 3 types: 1.int  2.str  3.slug and if don't know the type then dont have to mention type
     path('services/',views.services,name="services"),       
-    path('calculations/',views.calculations,name="calculations"),       
+    path('calculations/',views.calculations,name="calculations"),   
+    path("form/",views.form,name='form')    
     
 ]

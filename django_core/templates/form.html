@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-section">
+    <h2>Service Booking Form</h2>
+
+    <form method="post" class="form-box">
+        {% csrf_token %}                <!--A CSRF token is a secret, unique value that Django uses to verify:
+                                        “This form was submitted from my own website, not from a hacker.
+                                        CSRF tokrn contains a secret verification key that protect POST request.In Django Every POST form must include CSRF token.-->
+        <input type="text" name="name" value="{{ name }}" placeholder="Your Name">
+
+        <input type="email" name="email" value="{{ email }}" placeholder="Your Email">
+
+        <input type="text" name="phone" value="{{ phone }}" placeholder="Phone Number">
+
+        <!-- SERVICES DROPDOWN -->
+        <select name="service" required>
+            <option value="">Select Service</option>
+
+            <option value="home_cleaning" {% if service == "home_cleaning" %}selected{% endif %}>Home Cleaning</option>
+
+            <option value="plumbing" {% if service == "plumbing" %}selected{% endif %}>Plumbing</option>
+
+            <option value="electrical" {% if service == "electrical" %}selected{% endif %}>Electrical</option>
+
+            <option value="ac_repair" {% if service == "ac_repair" %}selected{% endif %}>AC Repair</option>
+
+            <option value="appliance_repair" {% if service == "appliance_repair" %}selected{% endif %}>Appliance Repair</option>
+
+            <option value="painting" {% if service == "painting" %}selected{% endif %}>Painting</option>
+
+            <option value="carpentry" {% if service == "carpentry" %}selected{% endif %}>Carpentry</option>
+
+            <option value="pest_control" {% if service == "pest_control" %}selected{% endif %}>Pest Control</option>
+
+            <option value="cctv_installation" {% if service == "cctv_installation" %}selected{% endif %}>CCTV Installation</option>
+
+            <option value="home_shifting" {% if service == "home_shifting" %}selected{% endif %}>Home Shifting</option>
+        </select>
+
+        <textarea name="message" placeholder="Describe your problem">{{message}}</textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</section>
+
+{% endblock %}

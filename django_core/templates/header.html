@@ -15,6 +15,7 @@
         {% url 'contact' as url %}
         <a class="{% if request.path == url %}active{% endif %}" href="{{url}}">Contact</a>
         
+        <a class="{% if request.path == '/form/' %}active{% endif %}" href="{% url 'form' %}">Book a Service</a>
         
     </nav>
     
