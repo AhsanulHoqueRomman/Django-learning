@@ -7,14 +7,15 @@
 <section class="form-section">
     <h2>Calculations</h2>
 
-    <form method="get" class="form-box">
+    <!--We are using action method to show the form data on required url. We can use this method with POST method also.-->
+    <form method="get" action="{% url 'submitform' %}" class="form-box">
         
 
         <input type="text" name="name" placeholder="Number1" required>
 
 
 
-        <input type="text" name="phone" placeholder="Number1">
+        <input type="text" name="phone" placeholder="Number2" required>
 
 
 

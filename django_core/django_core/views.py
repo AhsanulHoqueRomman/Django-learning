@@ -70,3 +70,25 @@ def form(request):
 
 def thank(request):
             return render(request,"thank.html")
+
+def submitform(request):
+    finalans=0
+    try:
+        if request.method == "GET":
+        #One method to get the data from the form in GET method
+        # n1= int(request.GET["name"])
+        # n2= int(request.GET["phone"])
+        # print(n1+n2)
+        #Another method is:
+            n1 = int(request.GET.get("name"))
+            n2 = int(request.GET.get("phone"))
+            finalans= n1+n2
+
+            return HttpResponse(finalans)
+    except:
+        pass
+    
+    #We are using action method to show the form data on required url. We can use this method with POST method also.
+    #By using action we can show the data whatever the url we want.And we can use redirect ar HTTPResponse to show the form data.
+
+    
