@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-section">
+    <h2>Thank You!</h2>
+    <p>Your request has been submitted successfully.</p>
+
+    <a href="{% url 'home' %}">
+        <button>Go Back Home</button>
+    </a>
+</section>
+
+{% endblock %}

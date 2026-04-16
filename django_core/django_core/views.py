@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render,redirect
 
 def home(request):
     # data = {
@@ -53,9 +53,9 @@ def form(request):
         message = request.POST.get("message")
 
         print(name, email, phone, service, message)
-
-        data = {                     #Using This data dictionary to pass the key values in the form (e.g.<input type="text" name="name" value="{{ name }}" placeholder="Your Name"> )
-                                     #to store the previous input data in the form.
+        #Using This data dictionary to pass the key values in the form (e.g.<input type="text" name="name" value="{{ name }}" placeholder="Your Name"> )
+        #to store the previous input data in the form in case we want to store the submitted data in the form and there is no redirect page.
+        data = {                     
             "name": name,
             "email": email,
             "phone": phone,
@@ -63,4 +63,10 @@ def form(request):
             "message": message
         }
 
+        
+        return redirect('/thank/')          #we can use the HTTPResponseRedirect which also does the same job.
+
     return render(request, "form.html", data)
+
+def thank(request):
+            return render(request,"thank.html")

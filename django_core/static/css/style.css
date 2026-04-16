@@ -235,4 +235,19 @@ footer {
 .form-box button:hover {
     opacity: 0.9;
 }
+
+.form-section button {
+    margin-top: 20px;
+}
+
+.header h1 a,
+.header h1 a:visited {
+  border-bottom: 1px solid white;
+  color: white;
+  text-decoration: none;
+}
+
+.header h1 a:hover {
+  opacity: 0.8;
+}
 /*# sourceMappingURL=style.css.map */
