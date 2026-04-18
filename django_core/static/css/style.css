@@ -242,7 +242,7 @@ footer {
 
 .header h1 a,
 .header h1 a:visited {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid navy;
   color: white;
   text-decoration: none;
 }
