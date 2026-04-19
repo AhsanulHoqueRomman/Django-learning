@@ -7,15 +7,21 @@
 <section class="form-section">
     <h2>Calculations</h2>
 
-    <!--We are using action method to show the form data on required url. We can use this method with POST method also.-->
-    <form method="get" action="{% url 'submitform' %}" class="form-box">
-        
+    
+    <form method="post" class="form-box">
+        {% csrf_token %}
 
+        {{ form }}
+        
+{% comment %} 
+      <!--We are using action method to show the form data on required url. We can use this method with POST method also.-->
+    <form method="post" action="{% url 'submitform' %}" class="form-box">
+        {% csrf_token %}
         <input type="text" name="name" placeholder="Number1" required>
 
 
 
-        <input type="text" name="phone" placeholder="Number2" required>
+        <input type="text" name="phone" placeholder="Number2" required> {% endcomment %}
 
 
 
