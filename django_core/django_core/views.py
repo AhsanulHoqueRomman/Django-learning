@@ -117,6 +117,29 @@ def submitform(request):
             return HttpResponse(finalans)
     except:
         pass
+
+def calculator(request):
+     result=""
+     try:
+          if request.method == "POST":
+               n1=eval(request.POST.get("num1"))
+               opr= request.POST.get("operator")
+               n2=eval(request.POST.get("num2"))
+               if opr== "add":
+                    result = n1+n2
+               elif opr == "sub":
+                    result = n1-n2
+               elif opr == "mul":
+                    result = n1*n2
+               elif opr == "div":
+                    result = n1/n2
+
+                    
+
+     except:
+          result = "Invalid User Input"         
+
+     return render(request, "calculator.html",{"result":result})
     
     #We are using action method to show the form data on required url. We can use this method with POST method also.
     #By using action we can show the data whatever the url we want.And we can use redirect ar HTTPResponse to show the form data.
