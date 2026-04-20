@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-section">
+    <h2>Even or Odd Checker</h2>
+
+    <form method="post" class="form-box">
+        {% csrf_token %}
+
+       
+        <input type="number" name="number" placeholder="Enter a number" required>
+
+        
+        <button type="submit">Check</button>
+
+        
+        <input type="text" value="{{ result }}" placeholder="Result" readonly>
+
+    </form>
+</section>
+
+{% endblock %}

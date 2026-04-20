@@ -30,5 +30,6 @@ urlpatterns = [
     path("thank/",views.thank,name='thank'),  
     path("submitform/",views.submitform,name='submitform'),
     path("calculator/",views.calculator,name='calculator'),
+    path("evenodd/",views.evenodd,name='evenodd'),
     
 ]

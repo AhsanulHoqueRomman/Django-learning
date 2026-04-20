@@ -144,5 +144,14 @@ def calculator(request):
     #We are using action method to show the form data on required url. We can use this method with POST method also.
     #By using action we can show the data whatever the url we want.And we can use redirect ar HTTPResponse to show the form data.
 
+def evenodd(request):
+     result = ''
+     if request.method =="POST":
+          n = int(request.POST.get('number'))
+          if n%2 ==0:
+               result = "Even Number"
+          else:
+               result = "Odd Number"
 
+     return render(request,"evenodd.html", {'result': result })
     
