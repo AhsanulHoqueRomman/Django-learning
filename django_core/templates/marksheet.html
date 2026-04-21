@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-section">
+    <h2>Even or Odd Checker</h2>
+
+    <form method="post" class="form-box">
+        {% csrf_token %}
+
+       
+        <input type="number" name="mark1" placeholder="Enter 1st subject mark" required>
+        <input type="number" name="mark2" placeholder="Enter 2nd subject mark" required>
+        <input type="number" name="mark3" placeholder="Enter 3rd subject mark" required>
+        <input type="number" name="mark4" placeholder="Enter 4th subject mark" required>
+        <input type="number" name="mark5" placeholder="Enter 5th subject mark" required>
+
+        
+        <button type="submit">Check Status</button>
+
+        
+        <input type="text" value="{{ totalnum }}" placeholder="Total Number" readonly>
+        <input type="text" value="{{ percentage }}" placeholder="Percentage" readonly>
+        <input type="text" value="{{ grade }}" placeholder="Grade" readonly>
+
+    </form>
+</section>
+
+{% endblock %}
