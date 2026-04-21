@@ -6,10 +6,16 @@
     <h2>Even or Odd Checker</h2>
 
     <form method="post" class="form-box">
+
+        {% if error %}
+        <div class = "alert alert-danger" role = "alert">
+            Please Enter The value!
+        </div>
+        {% endif %}
+
         {% csrf_token %}
 
-       
-        <input type="number" name="number" placeholder="Enter a number" required>
+        <input type="number" name="number" placeholder="Enter a number" >
 
         
         <button type="submit">Check</button>

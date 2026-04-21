@@ -147,6 +147,9 @@ def calculator(request):
 def evenodd(request):
      result = ''
      if request.method =="POST":
+          if request.POST.get('number') == "":
+              return render(request, "evenodd.html", {'error': True})
+          
           n = int(request.POST.get('number'))
           if n%2 ==0:
                result = "Even Number"
