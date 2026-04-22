@@ -26,8 +26,8 @@ def contact(request):
 #     return HttpResponse(courseid)
 
 def services(request):
-    serviceData = Service.objects.all().order_by('-id')     #order by function used to order ascending or descending.with - it will be order by descending.
-
+    serviceData = Service.objects.all().order_by('-name')[1:4]  #order by function used to order ascending or descending.with - it will be order by descending.
+                                                               #[x:y] is a syntax of list slicimg which is used for limiting query results that means limiting the object from models from x to y where index started from 0.
     return render(request,"services.html",{
         "services":serviceData
     })
