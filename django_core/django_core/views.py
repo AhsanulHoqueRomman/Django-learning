@@ -26,7 +26,7 @@ def contact(request):
 #     return HttpResponse(courseid)
 
 def services(request):
-    serviceData = Service.objects.all()
+    serviceData = Service.objects.all().order_by('-id')     #order by function used to order ascending or descending.with - it will be order by descending.
 
     return render(request,"services.html",{
         "services":serviceData
