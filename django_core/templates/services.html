@@ -17,7 +17,7 @@
         <div class="card">
             <img src="{{ service.service_image.url }}" alt="">
             <h3>{{ service.name }}</h3>
-            <p>{{ service.description }}</p>
+            <p>{{ service.description | safe | lower | capfirst }}</p>   #safe,upper,wordcount,lengththese are django built in filters for customizing templates by django.
         </div>
         {% endfor %}
 
