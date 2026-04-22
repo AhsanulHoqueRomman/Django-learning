@@ -13,65 +13,13 @@
 
     <div class="grid">
 
+        {% for service in services %}
         <div class="card">
-            <img src="/static/img/cleaning.jpg">
-            <h3>Home Cleaning</h3>
-            <p>Deep cleaning for kitchen, bathroom, and full house.</p>
+            <img src="{{ service.service_image.url }}" alt="">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
         </div>
-
-        <div class="card">
-            <img src="/static/img/plumbing.jpg">
-            <h3>Plumbing</h3>
-            <p>Leak fixing, pipe installation, and maintenance.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/electrical.jpg">
-            <h3>Electrical</h3>
-            <p>Safe electrical repair and installation services.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/ac_repair.jpg">
-            <h3>AC Repair</h3>
-            <p>Installation, servicing, and gas refill.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/appl_repair.jpg">
-            <h3>Appliance Repair</h3>
-            <p>Repair for fridge, washing machine, and microwave.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/painting.jpg">
-            <h3>Painting</h3>
-            <p>Interior and exterior wall painting services.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/carpentry.jpg">
-            <h3>Carpentry</h3>
-            <p>Furniture repair and custom woodwork solutions.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/pest_control.jpg">
-            <h3>Pest Control</h3>
-            <p>Eliminate pests with safe and effective methods.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/cctv.jpg">
-            <h3>CCTV Installation</h3>
-            <p>Secure your home with modern surveillance systems.</p>
-        </div>
-
-        <div class="card">
-            <img src="/static/img/shifting.jpg">
-            <h3>Home Shifting</h3>
-            <p>Professional packing and moving services.</p>
-        </div>
+        {% endfor %}
 
     </div>
 </section>

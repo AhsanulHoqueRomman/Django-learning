@@ -1,6 +1,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render,redirect
 from .forms import UsersForm
+from services.models import Service
 
 def home(request):
     # data = {
@@ -25,7 +26,11 @@ def contact(request):
 #     return HttpResponse(courseid)
 
 def services(request):
-    return render(request,"services.html")
+    serviceData = Service.objects.all()
+
+    return render(request,"services.html",{
+        "services":serviceData
+    })
 
 # def calculations(request):
 #     finalans=0
@@ -105,10 +110,7 @@ def submitform(request):
     finalans=0
     try:
         if request.method == "GET":
-        #One method to get the data from the form in GET method
-        # n1= int(request.GET["name"])
-        # n2= int(request.GET["phone"])
-        # print(n1+n2)
+        
         #Another method is:
             n1 = int(request.GET.get("name"))
             n2 = int(request.GET.get("phone"))
