@@ -7,20 +7,36 @@
     <p>Explore a wide range of professional home services</p>
 </section>
 
+
+
 <!-- SERVICES LIST -->
 <section class="services">
-    <h2>All Services</h2>
+    <div class="search-container">
+        <form method="get" class="search-form">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    name="servicename" 
+                    placeholder="Search services..." 
+                    class="search-input"
+                    value=" "
+                />
+                <button type="submit" class="search-btn">
+                    <span>🔍</span> Search
+                </button>
+            </div>
+        </form>
+    </div>
 
     <div class="grid">
-
+        <h2>All Services</h2>
         {% for service in services %}
         <div class="card">
             <img src="{{ service.service_image.url }}" alt="">
             <h3>{{ service.name }}</h3>
-            <p>{{ service.description | safe | lower | capfirst }}</p>   #safe,upper,wordcount,lengththese,slice:"x:y" are django built in filters for customizing templates by django.
+            <p>{{ service.description | safe | lower | capfirst }}</p>
         </div>
         {% endfor %}
-
     </div>
 </section>
 

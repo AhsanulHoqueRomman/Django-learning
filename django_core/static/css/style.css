@@ -341,3 +341,69 @@ marquee a{
     color: #374151;
     font-size: 1rem;
 }
+
+/* Search Box */
+.search-container {
+    padding: 50px 20px;
+    margin-top: 30px;
+    background: linear-gradient(to right, #1e3a8a, #2563eb);
+    text-align: center;
+}
+
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.search-btn {
+    padding: 12px 28px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.services {
+    padding: 40px 20px;
+}
+
+.services .grid {
+    margin-top: 40px;
+}
+
+.services .grid h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #111827;
+}
