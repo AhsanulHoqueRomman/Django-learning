@@ -2,6 +2,8 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render,redirect
 from .forms import UsersForm
 from services.models import Service
+from news.models import News
+
 
 def home(request):
     # data = {
@@ -14,7 +16,11 @@ def home(request):
     #         {"name":"Ahsanul", "Contact": 987654321}
     #     ]
     # }
-    return render(request,"index.html")
+    newsData= News.objects.all() 
+    data = {
+        'newsData': newsData
+    }
+    return render(request,"index.html",data)
 
 def aboutUS(request):
     return render(request,"aboutus.html")

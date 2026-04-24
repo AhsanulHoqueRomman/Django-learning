@@ -265,4 +265,26 @@ footer {
     padding: 10px;
     font-size: 16px;
 }
+
+.news-ticker {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ticker-track {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.ticker-item {
+  flex: 0 0 auto;
+  padding: 0 1.5rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 /*# sourceMappingURL=style.css.map */
