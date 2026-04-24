@@ -25,6 +25,13 @@ def home(request):
 def aboutUS(request):
     return render(request,"aboutus.html")
 
+def news(request,id):
+    newsDetails = News.objects.get(id = id )
+    data ={
+        'newsDetails': newsDetails
+    }
+    return render(request,"news.html",data)
+
 def contact(request):
     return render(request,"contact.html")
 
