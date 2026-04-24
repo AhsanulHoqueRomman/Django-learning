@@ -36,6 +36,9 @@
             <h3>{{ service.name }}</h3>
             <p>{{ service.description | safe | lower | capfirst }}</p>
         </div>
+
+        {% empty %}          <!-- empty used for if after searching no math than it shows the below message-->
+        No Data Found.
         {% endfor %}
     </div>
 </section>

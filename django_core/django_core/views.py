@@ -44,7 +44,7 @@ def services(request):
     if request.method == "GET":
         st = request.GET.get('servicename')
         if st!=None:
-            serviceData = Service.objects.filter(name=st)
+            serviceData = Service.objects.filter(name__icontains=st)
     return render(request,"services.html",{
         "services":serviceData
     })
