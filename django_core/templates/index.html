@@ -1,24 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="news-ticker">
-    <div class="ticker-track">
-
-        {% for news in newsData %}
-            <a href="#" class="ticker-item">
-                {{ news.news_title }}
-            </a>
-        {% endfor %}
-
-        <!-- duplicate for smooth loop -->
-        {% for news in newsData %}
-            <a href="#" class="ticker-item">
-                {{ news.news_title }}
-            </a>
-        {% endfor %}
-
-    </div>
-</div>
+<marquee> 
+    {% for news in newsData %} 
+    
+    <a href=""> {{ news.news_title}}  </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {% endfor %} 
+</marquee>
 
 <section class="hero">
     <img src="/static/img/home.jpg" class="hero-img">

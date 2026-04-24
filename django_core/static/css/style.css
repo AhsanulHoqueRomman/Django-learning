@@ -266,7 +266,16 @@ footer {
     font-size: 16px;
 }
 
-.news-ticker {
+marquee a{
+  color: white;
+}
+
+marquee a{
+  color: white;
+  font-weight: bold;
+}
+
+/* .news-ticker {
   overflow: hidden;
   width: 100%;
 }
@@ -286,5 +295,5 @@ footer {
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
+} */
 /*# sourceMappingURL=style.css.map */
