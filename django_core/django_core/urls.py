@@ -34,6 +34,6 @@ urlpatterns = [
     path("calculator/",views.calculator,name='calculator'),
     path("evenodd/",views.evenodd,name='evenodd'),
     path("marksheet/",views.marksheet,name='marksheet'),
-    path("news/<id>",views.news),
+    path("newsDetails/<newsid>",views.newsDetails),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

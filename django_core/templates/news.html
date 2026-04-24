@@ -8,18 +8,18 @@
     </div>
 
     <div class="news-grid">
-        {% for news in newsData %}
-            <article class="news-card">
-                <h3>{{ news.news_title }}</h3>
-                {% if news.news_desc %}
-                    <p>{{ news.news_desc|truncatechars:140 }}</p>
-                {% else %}
-                    <p class="empty-state">Description not available.</p>
-                {% endif %}
-            </article>
-        {% empty %}
-            <p class="empty-state">No news items are available right now.</p>
-        {% endfor %}
+        
+            
+        <h3>{{ newsDetails.news_title }}</h3>
+                
+        <p>{{ newsDetails.news_desc|safe}}</p>
+               
+            
+                
+            
+        
+            
+        
     </div>
 </section>
 
