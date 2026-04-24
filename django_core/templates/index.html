@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<marquee> 
+<marquee onmouseover="stop()" onmouseout="start()">
     {% for news in newsData %} 
-    
     <a href=""> {{ news.news_title}}  </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     {% endfor %} 
 </marquee>
 
+ 
 <section class="hero">
     <img src="/static/img/home.jpg" class="hero-img">
 
