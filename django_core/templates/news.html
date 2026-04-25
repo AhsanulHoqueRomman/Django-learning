@@ -7,20 +7,17 @@
         <p>Stay updated with announcements, offers, and service news.</p>
     </div>
 
-    <div class="news-grid">
+    <div class="news-container">
+        <div class="news-content">
+            <h3>{{ newsDetails.news_title }}</h3>
+            <p>{{ newsDetails.news_desc|safe }}</p>
+        </div>
         
-            
-        <h3>{{ newsDetails.news_title }}</h3>
-                
-        <p>{{ newsDetails.news_desc|safe}}</p>
-               
-            
-                
-            
-        
-            
-        
+        <div class="news-image-wrapper">
+            <img src="/media/{{ newsDetails.news_image }}" alt="{{ newsDetails.news_title }}" class="news-image"/>
+        </div>
     </div>
+
 </section>
 
 {% endblock %}

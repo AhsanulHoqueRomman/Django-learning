@@ -301,7 +301,7 @@ marquee a{
 /* news page */
 .news-page {
     padding: 60px 20px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     background: #ffffff;
 }
@@ -323,23 +323,65 @@ marquee a{
     margin: 0 auto;
 }
 
-.news-grid {
+.news-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
     background: #f9f9f9;
-    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.news-grid h3 {
+.news-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.news-content h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #1e3a8a;
 }
 
-.news-grid p {
+.news-content p {
     line-height: 1.7;
     color: #374151;
     font-size: 1rem;
+}
+
+.news-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.news-image:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+    }
+    
+    .news-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
 }
 
 /* Search Box */
