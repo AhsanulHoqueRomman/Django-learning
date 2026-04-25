@@ -9,7 +9,7 @@
 
 
 
-<!-- SERVICES LIST -->
+<!-- Search SERVICES -->
 <section class="services">
     <div class="search-container">
         <form method="get" class="search-form">
@@ -28,6 +28,7 @@
         </form>
     </div>
 
+<!-- SERVICES LIST -->
     <div class="grid">
         <h2>All Services</h2>
         {% for service in services %}
@@ -43,6 +44,27 @@
         {% endfor %}
     </div>
 </section>
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    
+    {% if services.has_previous %}      <!--services key has serviceDataFinal value which has some key and services.has_previous is one of them.It returns the paginate.-->
+    <li class="page-item"><a class="page-link" href="/services/?page=1">First</a></li>
+    <li class="page-item"><a class="page-link" href="/services/?page={{services.previous_page_number}}">Previous</a></li>
+    {% endif %}
+
+    {% for n in totalpagelist %}
+    <li class="page-item"><a class="page-link" href="/services/?page={{n}}">{{n}}</a></li>
+    {% endfor %}
+
+    {% if services.has_next %}
+    <li class="page-item"><a class="page-link" href="/services/?page={{services.next_page_number}}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="/services/?page={{ lastpage }}">Last</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
 
 <!-- PROCESS -->
 <section class="how">

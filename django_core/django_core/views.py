@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from .forms import UsersForm
 from services.models import Service
 from news.models import News
+from django.core.paginator import Paginator
 
 
 def home(request):
@@ -39,15 +40,31 @@ def contact(request):
 #     return HttpResponse(courseid)
 
 def services(request):
-    serviceData = Service.objects.all().order_by('-name')[0:4]  #order by function used to order ascending or descending.with - it will be order by descending.
+    # serviceData = Service.objects.all().order_by('name')  #order by function used to order ascending or descending.with - it will be order by descending.
                                                                #[x:y] is a syntax of list slicimg which is used for limiting query results that means limiting the object from models from x to y where index started from 0.
-    if request.method == "GET":
-        st = request.GET.get('servicename')
-        if st!=None:
-            serviceData = Service.objects.filter(name__icontains=st)
-    return render(request,"services.html",{
-        "services":serviceData
-    })
+
+    # if request.method == "GET":
+    #     st = request.GET.get('servicename')
+    #     if st!=None:
+    #         serviceData = Service.objects.filter(name__icontains=st)     #by using filter we search by matching any model's field.by using icontains it mathces single letter and shows the result.
+    # return render(request,"services.html",{
+    #     "services":serviceData
+    # })
+
+    serviceData = Service.objects.all()
+    paginator = Paginator(serviceData,3)
+    page_number = request.GET.get('page')
+    serviceDataFinal = paginator.get_page(page_number)          #get_page give the number of page.It is a key function of pagination.
+    total_page = serviceDataFinal.paginator.num_pages           #num_pages give the total number of pages.It is a key function of pagination.
+
+    data = {
+        "services":serviceDataFinal,
+        "lastpage":total_page,
+        "totalpagelist":[n+1 for n in range(total_page)]
+    }
+
+    return render(request,"services.html", data)
+
 
 # def calculations(request):
 #     finalans=0
