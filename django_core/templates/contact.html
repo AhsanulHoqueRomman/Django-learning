@@ -38,12 +38,14 @@
     <div class="contact-form">
         <h2>Send Message</h2>
 
-        <form onsubmit="return sendMsg()">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="text" placeholder="Subject">
+        <form method= "post" action = "{% url 'saveEnquiry' %}" onsubmit=" return sendMsg()">
+            {% csrf_token %}
 
-            <select>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email"name="email" placeholder="Email Address" required>
+            <input type="text" name="subject" placeholder="Subject">
+
+            <select name = "service" required>
                 <option>Select Service</option>
                 <option>Cleaning</option>
                 <option>Plumbing</option>
@@ -51,7 +53,7 @@
                 <option>AC Repair</option>
             </select>
 
-            <textarea placeholder="Your Message" rows="5"></textarea>
+            <textarea name="message" placeholder="Your Message" rows="5"></textarea>
 
             <button type="submit">Send Message</button>
         </form>
