@@ -5,7 +5,7 @@ from services.models import Service
 from news.models import News
 from contactenquiry.models import contactEnquiry
 from django.core.paginator import Paginator
-from django.core.mail import send_mail
+from django.core.mail import send_mail,EmailMultiAlternatives
 
 
 def home(request):
@@ -20,15 +20,23 @@ def home(request):
     #     ]
     # }
 
-    send_mail(
-        "Testing Mail",
-        "Here is the first Mail",
-        "ahsanulhoqueromman@gmail.com",
-        ["hoque15-5330@diu.edu.bd"],
-        fail_silently=False,
-    )
+    subject = 'Testing Mail'
+    from_email = "ahsanulhoqueromman@gmail.com"
+    message = "<p> This is the first <b>Mail</b> </p>"
+    to = "hoque15-5330@diu.edu.bd"
+    msg = EmailMultiAlternatives(subject,message,from_email,[to])  #By using EmailMultiAlternatives we can send html template!
+    msg.content_subtype = "html"
+    msg.send()
 
-    
+    # send_mail(              #library function to send mail;Subject,message,from,to.
+    #     "Testing Mail",
+    #     "Here is the first Mail",
+    #     "ahsanulhoqueromman@gmail.com",
+    #     ["hoque15-5330@diu.edu.bd"],
+    #     fail_silently=False,
+    # )
+
+
     newsData= News.objects.all() 
     data = {
         'newsData': newsData
