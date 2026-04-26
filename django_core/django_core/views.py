@@ -24,11 +24,11 @@ def home(request):
     from_email = "ahsanulhoqueromman@gmail.com"
     message = "<p> This is the first <b>Mail</b> </p>"
     to = "hoque15-5330@diu.edu.bd"
-    msg = EmailMultiAlternatives(subject,message,from_email,[to])  #By using EmailMultiAlternatives we can send html template!
+    msg = EmailMultiAlternatives(subject,message,from_email,[to])  #By using EmailMultiAlternatives we can send html template and content!
     msg.content_subtype = "html"
     msg.send()
 
-    # send_mail(              #library function to send mail;Subject,message,from,to.
+    # send_mail(              #library function to send mail;Subject,message,from,to.By using this,we can send normal text mail.
     #     "Testing Mail",
     #     "Here is the first Mail",
     #     "ahsanulhoqueromman@gmail.com",
