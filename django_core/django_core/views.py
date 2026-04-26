@@ -5,6 +5,7 @@ from services.models import Service
 from news.models import News
 from contactenquiry.models import contactEnquiry
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
 
 
 def home(request):
@@ -18,6 +19,16 @@ def home(request):
     #         {"name":"Ahsanul", "Contact": 987654321}
     #     ]
     # }
+
+    send_mail(
+        "Testing Mail",
+        "Here is the first Mail",
+        "ahsanulhoqueromman@gmail.com",
+        ["hoque15-5330@diu.edu.bd"],
+        fail_silently=False,
+    )
+
+    
     newsData= News.objects.all() 
     data = {
         'newsData': newsData
